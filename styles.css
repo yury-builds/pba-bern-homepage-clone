@@ -1,0 +1,159 @@
+/* Paintball Arena Bern — homepage clone (test/review site)
+   Palette taken from the live site: accent #E74721, dark #181818 / #1f2124. */
+:root {
+  --accent: #E74721;
+  --accent-dark: #c73a17;
+  --ink: #181818;
+  --ink-2: #1f2124;
+  --ink-3: #33373d;
+  --paper: #ffffff;
+  --paper-2: #f4f5f6;
+  --text: #24262b;
+  --muted: #6b7280;
+  --line: #e4e6e9;
+  --radius: 12px;
+  --wrap: 1160px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { font-family: 'Oswald', 'Inter', sans-serif; line-height: 1.1; margin: 0 0 .5em; text-transform: uppercase; letter-spacing: .5px; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.7rem, 3.4vw, 2.5rem); font-weight: 600; }
+h3 { font-size: 1.2rem; font-weight: 600; letter-spacing: .3px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 24px; }
+.muted { color: var(--muted); font-size: .9em; }
+
+/* staging banner */
+.staging-banner {
+  background: #111; color: #ffd7cc; text-align: center;
+  font-size: .85rem; padding: 8px 16px; border-bottom: 2px solid var(--accent);
+}
+
+/* buttons */
+.btn {
+  display: inline-block; font-weight: 600; font-size: .95rem;
+  padding: 12px 26px; border-radius: 999px; cursor: pointer;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+  text-transform: uppercase; letter-spacing: .6px;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(231,71,33,.35); }
+.btn-primary:hover { background: var(--accent-dark); }
+.btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.6); }
+.btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+.btn-lg { padding: 16px 36px; font-size: 1.05rem; }
+
+/* header */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(24,24,24,.96); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.header-inner { display: flex; align-items: center; gap: 24px; height: 74px; }
+.brand img { height: 46px; width: auto; }
+.nav { display: flex; gap: 26px; margin-left: auto; }
+.nav a { color: #e8e8e8; font-weight: 500; font-size: .92rem; text-transform: uppercase; letter-spacing: .5px; }
+.nav a:hover { color: var(--accent); text-decoration: none; }
+.header-cta { display: flex; align-items: center; gap: 16px; }
+.langs { color: #9aa0a6; font-size: .78rem; letter-spacing: 1px; }
+
+/* hero */
+.hero {
+  position: relative; color: #fff; overflow: hidden;
+  background: linear-gradient(120deg, #181818 0%, #2a1109 60%, #3a1408 100%);
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(1200px 500px at 80% -10%, rgba(231,71,33,.35), transparent 60%),
+    url('https://paintballarena-bern.ch/wp-content/uploads/elementor/thumbs/Paintball-Adventure-Arena-Bern-Teamevent-Polterabend-Vereinsausflug-2025-scaled-rcztfae3brl9nindz1hurjzwo9q8wn5rl3dasd9xqo.jpg') center/cover;
+  opacity: .22;
+}
+.hero-inner { position: relative; padding: 96px 24px 88px; max-width: 860px; }
+.eyebrow { color: var(--accent); font-weight: 700; letter-spacing: 3px; text-transform: uppercase; font-size: .85rem; margin: 0 0 12px; }
+.hero-sub { font-size: 1.2rem; color: #d8d8d8; max-width: 640px; margin: 18px 0 32px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-facts { list-style: none; display: flex; gap: 40px; flex-wrap: wrap; margin: 48px 0 0; padding: 0; }
+.hero-facts li { display: flex; flex-direction: column; }
+.hero-facts strong { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: var(--accent); }
+.hero-facts span { color: #b8bcc2; font-size: .9rem; }
+
+/* sections */
+.section { padding: 82px 0; }
+.section-dark { background: var(--ink); color: #eaeaea; }
+.section-dark h2, .section-dark h3 { color: #fff; }
+.kicker { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: .82rem; margin: 0 0 10px; }
+.section-head { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.grid-2.reverse .media { order: -1; }
+.media img { border-radius: var(--radius); box-shadow: 0 20px 45px rgba(0,0,0,.25); width: 100%; object-fit: cover; }
+
+.ticks { list-style: none; padding: 0; margin: 20px 0 28px; }
+.ticks li { padding-left: 30px; position: relative; margin-bottom: 10px; }
+.ticks li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+
+/* event cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.card { background: var(--ink-2); border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(255,255,255,.06); transition: transform .15s ease; }
+.card:hover { transform: translateY(-4px); }
+.card img { height: 190px; width: 100%; object-fit: cover; }
+.card-body { padding: 22px 22px 26px; }
+.card-body h3 { color: #fff; }
+.card-body p { color: #b8bcc2; margin: 0; font-size: .95rem; }
+.events-note { text-align: center; color: #b8bcc2; max-width: 720px; margin: 40px auto 0; font-size: .95rem; }
+
+/* contact */
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+.contact-col h3 { color: var(--accent); margin-bottom: 10px; }
+.contact-col p { color: #d0d3d8; margin: 0; }
+.contact-col a { color: #fff; }
+
+/* info cards */
+.info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.info-card { background: var(--paper-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px; color: var(--text); transition: border-color .15s ease, transform .15s ease; }
+.info-card:hover { border-color: var(--accent); transform: translateY(-3px); text-decoration: none; }
+.info-card h3 { color: var(--ink); }
+.info-card p { color: var(--muted); margin: 0; font-size: .93rem; }
+
+/* CTA */
+.cta { background: linear-gradient(120deg, var(--accent) 0%, var(--accent-dark) 100%); color: #fff; text-align: center; }
+.cta-inner { max-width: 680px; margin: 0 auto; }
+.cta h2 { color: #fff; }
+.cta p { font-size: 1.15rem; margin: 0 0 26px; }
+.cta .btn-primary { background: #fff; color: var(--accent-dark); box-shadow: 0 10px 24px rgba(0,0,0,.25); }
+.cta .btn-primary:hover { background: #fff; color: var(--ink); }
+.cta-hint { font-size: .95rem; opacity: .9; margin-top: 22px; }
+
+/* footer */
+.site-footer { background: #000; color: #cfcfcf; padding: 48px 0; text-align: center; }
+.footer-logo { height: 54px; width: auto; margin: 0 auto 18px; }
+.footer-inner p { margin: 6px 0; font-size: .9rem; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .nav { display: none; }
+  .grid-2 { grid-template-columns: 1fr; gap: 32px; }
+  .grid-2.reverse .media { order: 0; }
+  .cards, .contact-grid, .info-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .cards, .contact-grid, .info-grid { grid-template-columns: 1fr; }
+  .header-cta .langs { display: none; }
+  .hero-facts { gap: 28px; }
+  .section { padding: 56px 0; }
+}
