@@ -9,7 +9,7 @@
   <link rel="icon" href="https://paintballarena-bern.ch/wp-content/uploads/2026/01/logo-header.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
@@ -21,42 +21,43 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Paintball Arena Bern">
-        <img src="https://paintballarena-bern.ch/wp-content/uploads/2026/01/logo-header.png" alt="Paintball Arena Bern" />
+        <img src="https://paintballarena-bern.ch/wp-content/uploads/2025/10/PBA_Logo_2023-300x300.png" alt="Paintball Arena Bern" />
       </a>
-      <nav class="nav" aria-label="Hauptnavigation">
-        <a href="#arena">Arena</a>
-        <a href="#events">Events</a>
-        <a href="#preise">Preise</a>
-        <a href="#kontakt">Kontakt</a>
-        <a href="#infos">Infos</a>
-      </nav>
-      <div class="header-cta">
-        <span class="langs" aria-hidden="true">DE · FR · EN</span>
-        <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Jetzt buchen</a>
+      <div class="header-right">
+        <a class="btn-reservation" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation</a>
+        <button class="hamburger" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Hauptnavigation" hidden>
+      <a href="#arena">Arena</a>
+      <a href="#events">Events</a>
+      <a href="#preise">Preise</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#infos">Infos</a>
+    </nav>
   </header>
 
   <main id="top">
-    <!-- HERO -->
+    <!-- HERO — photo first, then dark content block (matches live site) -->
     <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="wrap hero-inner">
-        <p class="eyebrow">Action &amp; Fun Erlebnis</p>
-        <h1>Paintball Arena Bern</h1>
-        <p class="hero-sub">
-          Ein Ort. Viele Erlebnisse. Dein perfekter Tagesausflug – Paintball, Abenteuer
-          und Catering unter einem Dach, mitten in Mamishaus bei Bern.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-lg" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Jetzt reservieren</a>
-          <a class="btn btn-ghost btn-lg" href="#events">Events entdecken</a>
+      <img class="hero-photo"
+           src="https://paintballarena-bern.ch/wp-content/uploads/2026/01/hero01-pab.webp"
+           alt="Paintball-Spieler in der Arena Bern" />
+      <div class="hero-content">
+        <div class="wrap">
+          <h1>Paintball Arena Bern</h1>
+          <p class="hero-intro">
+            In der <span class="accent">Paintball Arena</span> Tännlenenweg 3, 3152 Mamishaus
+            bei Bern erlebst du mit deinem Team in unserer Indoor-Halle auf über 2000m²
+            eine unvergessliche Paintball-Experience.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-primary btn-block" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation &gt;</a>
+            <a class="btn btn-ghost-dark btn-block" href="#infos">Mehr Infos &gt;</a>
+          </div>
         </div>
-        <ul class="hero-facts">
-          <li><strong>2'000+ m²</strong><span>Indoor-Spielfläche</span></li>
-          <li><strong>Täglich</strong><span>09:00 – 22:00 Uhr</span></li>
-          <li><strong>Gratis</strong><span>Parkplätze &amp; Anfahrt</span></li>
-        </ul>
       </div>
     </section>
 
@@ -76,12 +77,12 @@
             Umgebung. Keine langen Wege, keine komplizierte Planung – alles ist organisiert,
             alles ist bereit. Du kommst an, schnappst dir deine Ausrüstung und legst los.
           </p>
-          <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Erlebnis buchen</a>
+          <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Erlebnis buchen &gt;</a>
         </div>
         <div class="media">
           <img loading="lazy"
-               src="https://paintballarena-bern.ch/wp-content/uploads/2025/11/Paintball-Adventure-Arena-Bern-Teamevent-Polterabend-Vereinsausflug-2025-klein-e1767949776221-768x384.jpg"
-               alt="Paintball Adventure Arena Bern" />
+               src="https://paintballarena-bern.ch/wp-content/uploads/2025/12/Adventure-Arena-Bern-Freizeit-Aktivitaet-2025-e1765124343203.jpg"
+               alt="Adventure Arena Bern" />
         </div>
       </div>
     </section>
@@ -128,7 +129,7 @@
       <div class="wrap grid-2 reverse">
         <div class="media">
           <img loading="lazy"
-               src="https://paintballarena-bern.ch/wp-content/uploads/elementor/thumbs/Paintball-Adventure-Arena-Bern-Teamevent-Polterabend-Vereinsausflug-2025-scaled-rcztfae3brl9nindz1hurjzwo9q8wn5rl3dasd9xqo.jpg"
+               src="https://paintballarena-bern.ch/wp-content/uploads/2025/12/Paintball-Arena-Bern-Ausflugstipp-Spielarena-2025-scaled.jpg"
                alt="Paintball spielen in der Arena Bern" />
         </div>
         <div>
@@ -144,7 +145,7 @@
             <li>Spezialpreise für Studenten, Lehrlinge &amp; Militär ab 10 Personen</li>
             <li>Normal- und Privat-Events, 2h oder 3h</li>
           </ul>
-          <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Alle Preise ansehen</a>
+          <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Alle Preise ansehen &gt;</a>
         </div>
       </div>
     </section>
@@ -215,7 +216,7 @@
       <div class="wrap cta-inner">
         <h2>Buche jetzt dein Paintball-Erlebnis</h2>
         <p>Erobere deine Spielarena – wir sind für dich da!</p>
-        <a class="btn btn-primary btn-lg" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Jetzt reservieren</a>
+        <a class="btn btn-primary btn-lg" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Jetzt reservieren &gt;</a>
         <p class="cta-hint">💬 Fragen? Frag unseren Chat-Assistenten unten rechts.</p>
       </div>
     </section>
@@ -229,11 +230,30 @@
     </div>
   </footer>
 
+  <script>
+    // Hamburger toggle for the mobile nav (matches the live site's collapsed menu).
+    (function () {
+      var btn = document.getElementById('navToggle');
+      var nav = document.getElementById('mobileNav');
+      if (!btn || !nav) return;
+      function setOpen(open) {
+        nav.hidden = !open;
+        btn.setAttribute('aria-expanded', String(open));
+        btn.classList.toggle('is-open', open);
+      }
+      btn.addEventListener('click', function () {
+        setOpen(nav.hidden);
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') setOpen(false);
+      });
+    })();
+  </script>
+
   <!-- ===================================================================== -->
   <!-- PBA Chat Widget — production backend, served from the API origin.      -->
   <!-- The widget infers its API base from this script's origin, so it talks  -->
-  <!-- to https://api-v2.bernarenaapps.net. Once this test site is deployed,  -->
-  <!-- add its Vercel origin to ChatController @CrossOrigin to allow chats.   -->
+  <!-- to https://api-v2.bernarenaapps.net.                                   -->
   <!-- ===================================================================== -->
   <script src="https://api-v2.bernarenaapps.net/rest/widget.js"
           data-api="https://api-v2.bernarenaapps.net"
