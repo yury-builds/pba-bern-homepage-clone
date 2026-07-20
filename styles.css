@@ -143,10 +143,12 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
 
 @media (min-width: 1000px) {
-  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: 620px; }
-  .hero-media { order: 0; }                       /* natural order: text left, photo right */
-  .hero-photo { height: 100%; max-height: none; }
-  .hero-content { display: flex; align-items: center; padding: 60px 56px; }
+  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: 460px; }
+  /* Photo fills its cell via absolute positioning so its intrinsic height doesn't blow
+     out the row — the left column's content sets the hero height instead. */
+  .hero-media { order: 0; position: relative; overflow: hidden; }
+  .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: cover; }
+  .hero-content { display: flex; align-items: center; padding: 44px 56px; }
   .hero-content-inner { margin: 0; }
   .hero-content h1 { font-size: clamp(3rem, 4.6vw, 4.7rem); margin-bottom: 26px; }
 }
