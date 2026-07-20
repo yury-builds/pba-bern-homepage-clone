@@ -143,7 +143,10 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
 
 @media (min-width: 1000px) {
-  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: 620px; }
+  /* Fill the viewport below the banner (~44px) + sticky header (~95px) so the next
+     section never peeks in above the fold. Small extra overfill keeps a white sliver
+     from showing if the chrome is a pixel taller. */
+  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: calc(100vh - 134px); }
   /* Photo fills its cell via absolute positioning so its intrinsic height doesn't blow
      out the row — the left column's content sets the hero height instead. object-position
      biases the crop upward so the player's face stays in frame. */
