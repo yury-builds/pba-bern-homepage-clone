@@ -143,7 +143,7 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
 
 @media (min-width: 1000px) {
-  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: 560px; }
+  .hero-grid { display: grid; grid-template-columns: 46% 54%; min-height: 620px; }
   /* Photo fills its cell via absolute positioning so its intrinsic height doesn't blow
      out the row — the left column's content sets the hero height instead. object-position
      biases the crop upward so the player's face stays in frame. */
