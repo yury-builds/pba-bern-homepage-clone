@@ -19,11 +19,21 @@
   </div>
 
   <header class="site-header">
-    <div class="wrap header-inner">
+    <div class="header-inner">
       <a class="brand" href="#top" aria-label="Paintball Arena Bern">
         <img src="https://paintballarena-bern.ch/wp-content/uploads/2025/10/PBA_Logo_2023-300x300.png" alt="Paintball Arena Bern" />
       </a>
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <a href="#arena">Arena</a>
+        <a href="#preise">Paintball</a>
+        <a href="#arena">Adventure</a>
+        <a href="#events">Dein Event</a>
+        <a href="#infos">News</a>
+        <a href="#infos">Infos</a>
+        <a href="#kontakt">Fragen?</a>
+      </nav>
       <div class="header-right">
+        <span class="lang" aria-hidden="true">🇨🇭 DE</span>
         <a class="btn-reservation" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation</a>
         <button class="hamburger" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
@@ -32,31 +42,35 @@
     </div>
     <nav class="mobile-nav" id="mobileNav" aria-label="Hauptnavigation" hidden>
       <a href="#arena">Arena</a>
-      <a href="#events">Events</a>
-      <a href="#preise">Preise</a>
-      <a href="#kontakt">Kontakt</a>
+      <a href="#preise">Paintball</a>
+      <a href="#events">Dein Event</a>
       <a href="#infos">Infos</a>
+      <a href="#kontakt">Fragen?</a>
     </nav>
   </header>
 
   <main id="top">
-    <!-- HERO — photo first, then dark content block (matches live site) -->
+    <!-- HERO — two columns on desktop (text left, photo right); stacked on mobile -->
     <section class="hero">
-      <img class="hero-photo"
-           src="https://paintballarena-bern.ch/wp-content/uploads/2026/01/hero01-pab.webp"
-           alt="Paintball-Spieler in der Arena Bern" />
-      <div class="hero-content">
-        <div class="wrap">
-          <h1>Paintball Arena Bern</h1>
-          <p class="hero-intro">
-            In der <span class="accent">Paintball Arena</span> Tännlenenweg 3, 3152 Mamishaus
-            bei Bern erlebst du mit deinem Team in unserer Indoor-Halle auf über 2000m²
-            eine unvergessliche Paintball-Experience.
-          </p>
-          <div class="hero-buttons">
-            <a class="btn btn-primary btn-block" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation &gt;</a>
-            <a class="btn btn-ghost-dark btn-block" href="#infos">Mehr Infos &gt;</a>
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-content-inner">
+            <h1>Paintball Arena Bern</h1>
+            <p class="hero-intro">
+              In der <span class="accent">Paintball Arena</span> Tännlenenweg 3, 3152 Mamishaus
+              bei Bern erlebst du mit deinem Team in unserer Indoor-Halle auf über 2000m²
+              eine unvergessliche Paintball-Experience.
+            </p>
+            <div class="hero-buttons">
+              <a class="btn btn-primary" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation &gt;</a>
+              <a class="btn btn-ghost-dark" href="#infos">Mehr Infos &gt;</a>
+            </div>
           </div>
+        </div>
+        <div class="hero-media">
+          <img class="hero-photo"
+               src="https://paintballarena-bern.ch/wp-content/uploads/2026/01/hero01-pab.webp"
+               alt="Paintball-Spieler in der Arena Bern" />
         </div>
       </div>
     </section>
