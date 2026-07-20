@@ -39,10 +39,19 @@ h3 { font-size: 1.15rem; font-weight: 700; }
 .muted { color: var(--muted); font-size: .9em; }
 .accent { color: var(--accent); }
 
-/* staging banner */
+/* staging banner — flex-centred with a min-height so the text can never be clipped by
+   emoji/font line-box quirks (relying on default line-box centring cropped the top on
+   some displays). */
 .staging-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 20px;
+  line-height: 1.4;
   background: #111; color: #ffd7cc; text-align: center;
-  font-size: .85rem; padding: 8px 16px; border-bottom: 2px solid var(--accent);
+  font-size: .85rem; border-bottom: 2px solid var(--accent);
 }
 
 /* buttons — rectangular with a small radius, like the live site */
