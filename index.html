@@ -11,6 +11,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
+  <!-- Language switch for this review site: ?lang=de|fr|en sets the page language, which the
+       chat widget picks up (it resolves its language from <html lang> when no data-lang is
+       set). Runs here, before the deferred widget script, so the widget initialises in the
+       chosen language. -->
+  <script>
+    (function () {
+      var allowed = ['de', 'fr', 'en'];
+      var lang = (new URLSearchParams(location.search).get('lang') || '').toLowerCase();
+      if (allowed.indexOf(lang) === -1) lang = 'de';
+      document.documentElement.lang = lang;
+    })();
+  </script>
 </head>
 <body>
   <!-- Staging banner — makes clear this is a review copy, not the live site -->
@@ -33,7 +45,11 @@
         <a href="#kontakt">Fragen?</a>
       </nav>
       <div class="header-right">
-        <span class="lang" aria-hidden="true">🇨🇭 DE</span>
+        <div class="lang-switch" role="group" aria-label="Sprache wählen / Choose language">
+          <a href="?lang=de" hreflang="de">DE</a>
+          <a href="?lang=fr" hreflang="fr">FR</a>
+          <a href="?lang=en" hreflang="en">EN</a>
+        </div>
         <a class="btn-reservation" href="https://booking.paintballarena-bern.ch" target="_blank" rel="noopener">Reservation</a>
         <button class="hamburger" id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
           <span></span><span></span><span></span>
@@ -262,6 +278,18 @@
         if (e.target.tagName === 'A') setOpen(false);
       });
     })();
+
+    // Highlight the active language in the switch (the page lang was set from ?lang above).
+    (function () {
+      var lang = document.documentElement.lang || 'de';
+      var links = document.querySelectorAll('.lang-switch a');
+      for (var i = 0; i < links.length; i++) {
+        if (links[i].getAttribute('hreflang') === lang) {
+          links[i].classList.add('is-active');
+          links[i].setAttribute('aria-current', 'true');
+        }
+      }
+    })();
   </script>
 
   <!-- ===================================================================== -->
@@ -269,9 +297,10 @@
   <!-- The widget infers its API base from this script's origin, so it talks  -->
   <!-- to https://api-v2.bernarenaapps.net.                                   -->
   <!-- ===================================================================== -->
+  <!-- No data-lang: the widget follows <html lang>, which the language switch sets from the
+       ?lang query param above — so DE/FR/EN in the header drives the widget too. -->
   <script src="https://api-v2.bernarenaapps.net/rest/widget.js"
           data-api="https://api-v2.bernarenaapps.net"
-          data-lang="de"
           defer></script>
 </body>
 </html>

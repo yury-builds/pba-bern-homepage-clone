@@ -93,13 +93,21 @@ h3 { font-size: 1.2rem; font-weight: 700; letter-spacing: normal; }
   text-transform: uppercase; letter-spacing: .5px; font-size: .82rem;
 }
 .desktop-nav a:hover { color: var(--accent); text-decoration: none; }
-.lang {
-  display: none; color: #eaeaea; font-family: 'Montserrat', sans-serif;
-  font-weight: 700; letter-spacing: .5px; font-size: .82rem; white-space: nowrap;
+/* DE/FR/EN language switch — reloads with ?lang=xx, which sets <html lang> and so drives
+   the chat widget's language too. A small segmented control to match the dark header. */
+.lang-switch {
+  display: none; align-items: center; gap: 1px;
+  border: 1px solid rgba(255, 255, 255, .28); border-radius: 8px; overflow: hidden;
 }
+.lang-switch a {
+  padding: 5px 9px; font-family: 'Montserrat', sans-serif; font-weight: 700;
+  letter-spacing: .5px; font-size: .78rem; line-height: 1; color: #cfcfcf;
+}
+.lang-switch a:hover { color: #fff; background: rgba(255, 255, 255, .09); text-decoration: none; }
+.lang-switch a.is-active { background: var(--accent); color: #fff; }
 @media (min-width: 1080px) {
   .desktop-nav { display: flex; gap: 22px; align-items: center; margin-left: auto; }
-  .lang { display: inline; }
+  .lang-switch { display: inline-flex; }
   /* Higher specificity than the base .hamburger rule (defined later in the file) so
      this actually wins and hides it on desktop. */
   .site-header .hamburger { display: none; }
