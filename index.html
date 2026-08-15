@@ -295,12 +295,15 @@
   <!-- ===================================================================== -->
   <!-- PBA Chat Widget — production backend, served from the API origin.      -->
   <!-- The widget infers its API base from this script's origin, so it talks  -->
-  <!-- to https://api-v2.bernarenaapps.net.                                   -->
+  <!-- to https://api-v2.bernarenaapps.net (no data-api needed).              -->
   <!-- ===================================================================== -->
   <!-- No data-lang: the widget follows <html lang>, which the language switch sets from the
-       ?lang query param above — so DE/FR/EN in the header drives the widget too. -->
+       ?lang query param above — so DE/FR/EN in the header drives the widget too.
+       data-privacy-url points at the privacy page the consent notice links to. This is a
+       review copy without its own privacy page; on live use the real path
+       (/impressum-datenschutz/). -->
   <script src="https://api-v2.bernarenaapps.net/rest/widget.js"
-          data-api="https://api-v2.bernarenaapps.net"
+          data-privacy-url="/datenschutz"
           defer></script>
 </body>
 </html>
